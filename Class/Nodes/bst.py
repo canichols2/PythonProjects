@@ -24,21 +24,45 @@ class BSTNode(object):
     def addLeft(self, val):
         self._addLeft(BSTNode(val))
 
-    def _addLeft(self, node):
+    def _addLeft(self, node: BSTNode):
+        """Adds node to left of parent and sets child parent to self
+
+        Arguments:
+            node {BSTNode} -- Node to add to left
+        """
+
         node.parent = self
         self.left = node
 
     def addRight(self, val):
         self._addRight(BSTNode(val))
 
-    def _addRight(self, node):
+    def _addRight(self, node: BSTNode):
+        """Adds node to right of parent and sets child parent to self
+
+        Arguments:
+            node {BSTNode} -- Node to add to right
+        """
+
         node.parent = self
         self.right = node
 
     def getNextValue(self):
+        """Returns the value of the next infix node of the right child
+
+        Returns:
+            [type] -- Value of the next node
+        """
+
         return self._getNextNode().val
 
     def _getNextNode(self):
+        """Returns the next in order successive node of the right child
+
+        Returns:
+            BSTNode -- The next infix Node
+        """
+
         node = self.right
         while node.hasLeft():
             node = node.left
@@ -69,6 +93,11 @@ class BSTNode(object):
         return self.right and self.left
 
     def getHeight(self):
+        """Recursively calculates the hight of the tree
+        Returns:
+            int -- height of tallest leaf.
+        """
+
         height = 1
         hLeft = self.left.getHeight()
         hRight = self.right.getHeight()
@@ -89,6 +118,12 @@ class BST(object):
         self.size = 0
 
     def __str__(self):
+        """This was going to return a string formatted into a node tree
+        using ascii art, but not finished.
+        Returns:
+            str -- the grahical representation of the tree
+        """
+
         height = ""
         return height
 
@@ -99,7 +134,7 @@ class BST(object):
             self.root = BSTNode(val)
         self.size += 1
 
-    def _add(self, val, CN):  # CN = CurrentNode
+    def _add(self, val, CN: BSTNode):  # CN = CurrentNode
         if val <= CN.val:
             if CN.hasLeft():
                 self._add(val, CN.left)
@@ -117,6 +152,14 @@ class BST(object):
         )
 
     def _findNode(self, val, node: BSTNode) -> BSTNode:
+        """Finds the first instance of "val" and
+        returns the node associated with it. using infix
+        Arguments:
+            val {[type]} -- the value you are looking for
+            node {BSTNode} -- the node for recursion
+        Returns:
+            BSTNode -- Returns the node you are looking for
+        """
         if(node.val is val):
             return node
         if node.val > val:
@@ -125,6 +168,12 @@ class BST(object):
             return self._findNode(val, node.right)
 
     def _remove(self, node: BSTNode):
+        """Checks if the node has children and removes the node
+        and reorders the rest of the nodes as needed
+        Arguments:
+            node {BSTNode} -- Node to remove
+        """
+
         if node.hasAnyChildren():
             if node.hasBothChildren():
                 node.val = node.getNextValue()
