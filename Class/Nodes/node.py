@@ -14,26 +14,6 @@ class Node(object):
         return f"This is a Node: {self.val}"
 
 
-class BSTNode(object):
-    """A Node with 2 child nodes and a value
-
-    Arguments:
-        object {value, parent, left, right} --
-        The node has 2 children nodes,
-        left and right, and a parent node.
-    """
-
-    def __init__(self, val, parent=None, left=None, right=None):
-        """Builds the initial node with a value,
-        and optional parent and or children
-        """
-
-        self.val = val
-        self.parent = parent
-        self.left = left
-        self.right = right
-
-
 class LinkedList(object):
     start = None
     end = None
