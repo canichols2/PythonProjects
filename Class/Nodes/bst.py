@@ -104,7 +104,7 @@ class BST(object):
             if CN.hasLeft():
                 self._add(val, CN.left)
             else:
-                CN.left = BSTNode(val, parent=CN) 
+                CN.left = BSTNode(val, parent=CN)
         else:
             if CN.hasRight():
                 self._add(val, CN.right)
@@ -134,7 +134,7 @@ class BST(object):
             else:
                 if node.hasLeft():
                     if node.isLeft():
-                        node.parent._addLeft(node.left) 
+                        node.parent._addLeft(node.left)
                     else:
                         node.parent._addRight(node.left)
                 else:  # Has Right Child
