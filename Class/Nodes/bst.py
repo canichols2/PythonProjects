@@ -42,6 +42,7 @@ class BSTNode(object):
 
         Arguments:
             node {BSTNode} -- Node to add to right
+            
         """
 
         node.parent = self
