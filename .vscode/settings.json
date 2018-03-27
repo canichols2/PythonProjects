@@ -1,7 +1,11 @@
 {
-"python.linting.enabled": true,
+"python.linting.enabled": false,
 "editor.tabSize": 4,
+<<<<<<< HEAD
 "python.pythonPath": "C:\\Program Files (x86)\\Python36-32\\python.exe",
+=======
+"python.pythonPath": "C:\\Python27\\python.exe",
+>>>>>>> 6147dabef2a96f7304e6e93168c7d1c602cd780d
 "python.linting.pylintEnabled": false,
 "python.linting.flake8Enabled": true
 }
