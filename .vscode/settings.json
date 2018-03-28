@@ -1,7 +1,7 @@
 {
 "python.linting.enabled": false,
 "editor.tabSize": 4,
-"python.pythonPath": "C:\\Python27\\python.exe",
+"python.pythonPath": "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\Python36_64\\python.exe",
 "python.linting.pylintEnabled": false,
 "python.linting.flake8Enabled": true
 }
